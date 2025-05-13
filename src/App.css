@@ -1,13 +1,18 @@
+/* Center the container on the screen */
 .complaint-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   text-align: center;
-  margin-top: 20px;
 }
 
 .complaint-form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 400px; /* Limits the width of the form */
   padding: 20px;
   background-color: #f7f7f7;
   border-radius: 8px;
@@ -40,6 +45,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 button:hover {
