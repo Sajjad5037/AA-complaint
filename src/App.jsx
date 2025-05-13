@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="complaint-form-container">
-      <h1>Complaint Registration</h1>
+      <h1>Complaint Registration AA Champion</h1>
       <form className="complaint-form">
         <div className="form-group">
           <label htmlFor="name">Name:</label>
