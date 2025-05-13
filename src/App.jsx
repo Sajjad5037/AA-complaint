@@ -1,34 +1,61 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [complaint, setComplaint] = useState('')
+
+  const handleSubmit = () => {
+    // Handle the form submission, you can add more logic here
+    alert(`Complaint submitted by: ${name}\nPhone: ${phone}\nComplaint: ${complaint}`)
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React + lets build this thing</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="complaint-form-container">
+      <h1>Complaint Registration</h1>
+      <form className="complaint-form">
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="phone">Phone Number:</label>
+          <input
+            type="text"
+            id="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            placeholder="Enter your phone number"
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="complaint">Complaint:</label>
+          <textarea
+            id="complaint"
+            value={complaint}
+            onChange={(e) => setComplaint(e.target.value)}
+            placeholder="Describe your complaint"
+            rows="5"
+            required
+          />
+        </div>
+
+        <button type="button" onClick={handleSubmit}>
+          Submit Complaint
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </form>
+    </div>
   )
 }
 
